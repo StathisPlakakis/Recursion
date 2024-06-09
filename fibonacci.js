@@ -1,20 +1,20 @@
 #!/usr/bin/env node
-
 function fibs(number) {
-  if (number <= 0) return []
-  else if (number === 1) return [0];
-  else {
-    let array = [0, 1];
-    for (let currentNumber = 2; currentNumber < number; currentNumber++) {
-      array.push(array[currentNumber - 2] + array[currentNumber - 1])
-    }
-    return array;
+  if (number <= 0) return [];
+  if (number === 1) return [0];
+  if (number === 2) return [0, 1];
+  
+  let array = [0, 1];
+  for (let current = 2; current < number; current++) {
+    array.push(array[current - 1] + array[current - 2])  
   }
+  return array;
+
 }
 
 function fibsRec(number) {
 
-  if (number === 0) return [];
+  if (number <= 0) return [];
   if (number === 1) return [0];
   if (number === 2) return [0, 1];
 
